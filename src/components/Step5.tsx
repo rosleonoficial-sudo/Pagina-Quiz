@@ -1,6 +1,30 @@
 import React from 'react';
 
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+  }
+}
+
 export function Step5() {
+  const handleFitnessClick = () => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      window.fbq('trackSingle', '1335109292111834', 'Lead');
+    }
+  };
+
+  const handleEletronicosClick = () => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      window.fbq('trackSingle', '1319209950176987', 'Lead');
+    }
+  };
+
+  const handleGeraisClick = () => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      window.fbq('trackSingle', '954536017305711', 'Lead');
+    }
+  };
+
   return (
     <div className="space-y-3">
       {/* Top Completed Badge */}
@@ -38,9 +62,10 @@ export function Step5() {
         </p>
 
         <a
-          href="https://chat.whatsapp.com"
+          href="https://chat.whatsapp.com/L4PZK11TC3E3sGuCiUPCEp?s=cl&p=i&ilr=2"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleFitnessClick}
           className="w-full bg-[#009a58] hover:bg-[#00874d] active:scale-[0.99] text-white font-extrabold text-xs py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_2px_6px_rgba(0,154,88,0.2)] transition-all text-center tracking-wide btn-shine animate-pulse-subtle"
         >
           🏆 ENTRAR NO GRUPO FITNESS <span className="text-sm">↗</span>
@@ -61,9 +86,10 @@ export function Step5() {
         </p>
 
         <a
-          href="https://chat.whatsapp.com"
+          href="https://chat.whatsapp.com/ITUxAmoDIL3LJux6lqyGCv?s=cl&p=i&ilr=2"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleEletronicosClick}
           className="w-full bg-[#111827] hover:bg-[#030712] active:scale-[0.99] text-white font-extrabold text-xs py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_2px_6px_rgba(17,24,39,0.2)] transition-all text-center tracking-wide btn-shine animate-pulse-subtle"
         >
           📱 ENTRAR NO GRUPO ELETRÔNICOS <span className="text-sm">↗</span>
@@ -84,9 +110,10 @@ export function Step5() {
         </p>
 
         <a
-          href="https://chat.whatsapp.com"
+          href="https://chat.whatsapp.com/CnaAeButRoNK7aoJpxxO1w?s=cl&p=i&ilr=2"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleGeraisClick}
           className="w-full bg-[#d97706] hover:bg-[#b45309] active:scale-[0.99] text-white font-extrabold text-xs py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow-[0_2px_6px_rgba(217,119,6,0.2)] transition-all text-center tracking-wide btn-shine animate-pulse-subtle"
         >
           🔥 ENTRAR NO GRUPO OFERTAS GERAIS <span className="text-sm">↗</span>
