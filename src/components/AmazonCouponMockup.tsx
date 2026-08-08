@@ -15,9 +15,9 @@ export function AmazonCouponMockup() {
           fetchpriority="high"
           onError={(e) => {
             const target = e.currentTarget;
-            if (target.src.endsWith('.webp')) {
+            if (target.src.includes('.webp')) {
               target.src = '/images/amazon-coupon-step.png';
-            } else if (target.src.endsWith('.png')) {
+            } else if (target.src.includes('.png') && !target.src.includes('postimg')) {
               target.src = 'https://i.postimg.cc/k5BSNhpm/Chat-GPT-Image-7-de-ago-de-2026-21-58-32.png';
             } else {
               setHasError(true);

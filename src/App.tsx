@@ -39,7 +39,7 @@ export default function App() {
 
   // Scroll to top when step changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [step]);
 
   return (
