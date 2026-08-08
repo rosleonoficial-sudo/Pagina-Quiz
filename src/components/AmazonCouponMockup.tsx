@@ -7,12 +7,22 @@ export function AmazonCouponMockup() {
     <div className="border border-slate-200/90 rounded-xl p-0.5 bg-white shadow-xs relative overflow-hidden select-none max-w-[280px] sm:max-w-[310px] mx-auto">
       {!hasError ? (
         <img
-          src="https://i.postimg.cc/k5BSNhpm/Chat-GPT-Image-7-de-ago-de-2026-21-58-32.png"
+          src="/images/amazon-coupon-step.webp"
           alt="Amazon resgate de cupom passo a passo"
           loading="eager"
           decoding="async"
-          referrerPolicy="no-referrer"
-          onError={() => setHasError(true)}
+          // @ts-ignore
+          fetchpriority="high"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src.endsWith('.webp')) {
+              target.src = '/images/amazon-coupon-step.png';
+            } else if (target.src.endsWith('.png')) {
+              target.src = 'https://i.postimg.cc/k5BSNhpm/Chat-GPT-Image-7-de-ago-de-2026-21-58-32.png';
+            } else {
+              setHasError(true);
+            }
+          }}
           className="w-full h-auto rounded-lg block mx-auto shadow-xs"
         />
       ) : (

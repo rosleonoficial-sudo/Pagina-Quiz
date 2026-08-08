@@ -23,6 +23,18 @@ export default function App() {
     }
   };
 
+  // Preload all mockup images into browser memory on initial render
+  useEffect(() => {
+    const imagesToPreload = [
+      '/images/mercadolivre-checkout-step.webp',
+      '/images/amazon-coupon-step.webp'
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   // Scroll to top when step changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -7,12 +7,22 @@ export function MercadoLivreCheckoutMockup() {
     <div className="border border-slate-200/90 bg-white rounded-xl p-0.5 shadow-xs relative overflow-hidden select-none max-w-[280px] sm:max-w-[310px] mx-auto">
       {!hasError ? (
         <img
-          src="https://i.postimg.cc/QNRfFcV8/Chat-GPT-Image-7-de-ago-de-2026-21-51-17.png"
+          src="/images/mercadolivre-checkout-step.webp"
           alt="Mercado Livre passo a passo de pagamento e cupom"
           loading="eager"
           decoding="async"
-          referrerPolicy="no-referrer"
-          onError={() => setHasError(true)}
+          // @ts-ignore
+          fetchpriority="high"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src.endsWith('.webp')) {
+              target.src = '/images/mercadolivre-checkout-step.png';
+            } else if (target.src.endsWith('.png')) {
+              target.src = 'https://i.postimg.cc/QNRfFcV8/Chat-GPT-Image-7-de-ago-de-2026-21-51-17.png';
+            } else {
+              setHasError(true);
+            }
+          }}
           className="w-full h-auto rounded-lg block mx-auto shadow-xs"
         />
       ) : (
