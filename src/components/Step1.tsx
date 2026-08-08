@@ -18,21 +18,17 @@ export function Step1({ onNext }: Step1Props) {
 
         {/* Main Title */}
         <h1 className="text-[#0f172a] font-black text-xl sm:text-2xl leading-snug tracking-tight mb-4">
-          Não pague mais caro por não saber usar o cupom. 👀
+          Você pode estar pagando mais caro por aí sem perceber. 👀
         </h1>
 
         {/* Light Gray Box with Instructions */}
         <div className="bg-[#f8fafc] border border-[#f1f5f9] rounded-xl p-4 text-[#334155] text-xs sm:text-sm leading-relaxed space-y-3">
           <p>
-            Em algumas ofertas, o preço <strong className="text-[#0f172a] font-black">só baixa depois que você aplica o cupom</strong>.
-          </p>
-
-          <p>
-            Nos próximos <strong className="text-[#0f172a] font-black">5 passos rápidos</strong>, vou te mostrar como fazer e onde o desconto aparece.
+            Em menos de 1 minuto, vou te mostrar como conseguir preços menores que você não encontra em qualquer lugar, onde encontrar nossas ofertas e como aproveitar os cupons nas plataformas.
           </p>
 
           <p className="text-[#009a58] font-extrabold text-sm sm:text-base flex items-center gap-1 pt-1">
-            Leva menos de 1 minuto 👇
+            Vamos lá 👇
           </p>
         </div>
 
