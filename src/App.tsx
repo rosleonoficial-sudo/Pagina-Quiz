@@ -27,7 +27,9 @@ export default function App() {
   useEffect(() => {
     const imagesToPreload = [
       '/images/mercadolivre-checkout-step.webp',
-      '/images/amazon-coupon-step.webp'
+      '/images/amazon-coupon-step.webp',
+      '/images/mercadolivre-checkout-step.png',
+      '/images/amazon-coupon-step.png'
     ];
     imagesToPreload.forEach((src) => {
       const img = new Image();
@@ -37,7 +39,7 @@ export default function App() {
 
   // Scroll to top when step changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [step]);
 
   return (
@@ -50,13 +52,13 @@ export default function App() {
 
         {/* Dynamic Content Body */}
         <div className="p-4 sm:p-5 flex-1 overflow-x-hidden">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
               key={step}
-              initial={{ opacity: 0, x: 16 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -16 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.12, ease: 'easeOut' }}
             >
               {step === 1 && <Step1 onNext={handleNext} />}
               {step === 2 && <Step2 onNext={handleNext} />}
