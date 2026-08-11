@@ -86,7 +86,7 @@ export function Step5() {
         </p>
 
         <a
-          href="https://chat.whatsapp.com/ITUxAmoDIL3LJux6lqyGCv?s=cl&p=i&ilr=2"
+          href="https://chat.whatsapp.com/ExWlu1RPjI2H0G6ppImz43?s=cl&p=i&ilr=2"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleEletronicosClick}
